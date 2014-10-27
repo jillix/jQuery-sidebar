@@ -6,7 +6,6 @@
  *  Copyright (c) 2013-14 - jillix gmbh
  *
  * */
-;
 (function($) {
 
     /**
@@ -59,7 +58,7 @@
             speed: 200,
 
             // Side: left|right|top|bottom
-            side: "left"
+            side: "left",
 
             // Range defaults
             range: {
