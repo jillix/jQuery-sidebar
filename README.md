@@ -16,32 +16,32 @@ $ npm install
 Initialize sidebar on selected elements.
 
 ```js
-$(&quot;.my-sidebar&quot;).sidebar({...});
+$(".my-sidebar").sidebar({...});
 ```
 
-After the call above, you can programatically open&#x2F;close the sidebar using:
+After the call above, you can programatically open/close the sidebar using:
 
 ```js
-$(&quot;.my-sidebar&quot;).trigger(&quot;sidebar:open&quot;);
-$(&quot;.my-sidebar&quot;).trigger(&quot;sidebar:close&quot;);
+$(".my-sidebar").trigger("sidebar:open");
+$(".my-sidebar").trigger("sidebar:close");
 ```
 
-After the sidebar is opened&#x2F;closed, `sidebar:opened`&#x2F;`sidebar:closed` event is emitted.
+After the sidebar is opened/closed, `sidebar:opened`/`sidebar:closed` event is emitted.
 
 ```js
-$(&quot;.my-sidebar&quot;).on(&quot;sidebar:opened&quot;, function () {
-   &#x2F;&#x2F; Do something on open
+$(".my-sidebar").on("sidebar:opened", function () {
+   // Do something on open
 });
 
-$(&quot;.my-sidebar&quot;).on(&quot;sidebar:closed&quot;, function () {
-   &#x2F;&#x2F; Do something on close
+$(".my-sidebar").on("sidebar:closed", function () {
+   // Do something on close
 });
 ```
 
-### Params
-- **Object** `options`: An object that will be merged with the default options.
+### Params 
+- **Object** `options`: An object that will be merged with the default options. 
  - `speed`: animation speed (default: 200)
- - `side`: left|right|top|bottom (default: &quot;left&quot;)
+ - `side`: left|right|top|bottom (default: "left")
 
 ### Return
 - **jQuery** The jQuery elements that were selected.
