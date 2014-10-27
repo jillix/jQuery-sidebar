@@ -1,10 +1,10 @@
 /*!
  *  jQuery sidebar plugin
  *  ---------------------
- *  A very simple sidebar jQuery plugin
+ *  A stupid simple sidebar jQuery plugin
  *
- *  Copyright (c) 2013-14 - jillix gmbh
- *
+ *  Developed with <3 and JavaScript by jillix developers.
+ *  Copyright (c) 2013-14 jillix
  * */
 (function($) {
 
