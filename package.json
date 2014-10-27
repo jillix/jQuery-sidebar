@@ -2,7 +2,7 @@
   "name": "jQuery-sidebar",
   "version": "2.0.0",
   "description": "A stupid simple sidebar jQuery plugin.",
-  "main": "jquery.sidebar.js",
+  "main": "src/jquery.sidebar.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
