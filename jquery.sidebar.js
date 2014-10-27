@@ -52,8 +52,7 @@
             // animate properties
             var properties = {};
 
-            // TODO padding? borders?
-            properties[settings.side] = - self.width() - 30;
+            properties[settings.side] = - self.outerWidth();
 
             // start animation
             self.animate(properties, settings.speed, function () {
