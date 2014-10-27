@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>jQuery Sidebar by jillix</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>jQuery Sidebar</h1>
+          <h2>A stupid simple sidebar jQuery plugin.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/jillix/jQuery-sidebar/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/jillix/jQuery-sidebar/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/jillix/jQuery-sidebar" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a name="jquery-sidebar" class="anchor" href="#jquery-sidebar"><span class="octicon octicon-link"></span></a>jQuery-sidebar</h1>
+
+<p>A stupid simple sidebar jQuery plugin.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Run the following commands to download and install the application:</p>
+
+<div class="highlight highlight-sh"><pre><span class="nv">$ </span>git clone https://github.com/jillix/jQuery-sidebar.git jQuery-sidebar
+<span class="nv">$ </span><span class="nb">cd </span>jQuery-sidebar
+<span class="nv">$ </span>npm install
+</pre></div>
+
+<h2>
+<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
+
+<h2>
+<a name="sidebaroptions" class="anchor" href="#sidebaroptions"><span class="octicon octicon-link"></span></a><code>sidebar(options)</code>
+</h2>
+
+<p>Initialize sidebar on selected elements.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">".my-sidebar"</span><span class="p">).</span><span class="nx">sidebar</span><span class="p">({...});</span>
+</pre></div>
+
+<p>After the call above, you can programatically open/close the sidebar using:</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">".my-sidebar"</span><span class="p">).</span><span class="nx">trigger</span><span class="p">(</span><span class="s2">"sidebar:open"</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">".my-sidebar"</span><span class="p">).</span><span class="nx">trigger</span><span class="p">(</span><span class="s2">"sidebar:close"</span><span class="p">);</span>
+</pre></div>
+
+<p>After the sidebar is opened/closed, <code>sidebar:opened</code>/<code>sidebar:closed</code> event is emitted.</p>
+
+<div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">".my-sidebar"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"sidebar:opened"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+   <span class="c1">// Do something on open</span>
+<span class="p">});</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s2">".my-sidebar"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"sidebar:closed"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+   <span class="c1">// Do something on close</span>
+<span class="p">});</span>
+</pre></div>
+
+<h3>
+<a name="params" class="anchor" href="#params"><span class="octicon octicon-link"></span></a>Params</h3>
+
+<ul>
+<li>
+<strong>Object</strong> <code>options</code>: An object that will be merged with the default options.
+
+<ul>
+<li>
+<code>speed</code>: animation speed (default: 200)</li>
+<li>
+<code>side</code>: left|right|top|bottom (default: "left")</li>
+</ul>
+</li>
+</ul>
+
+<h3>
+<a name="return" class="anchor" href="#return"><span class="octicon octicon-link"></span></a>Return</h3>
+
+<ul>
+<li>
+<strong>jQuery</strong> The jQuery elements that were selected.</li>
+</ul>
+
+<h2>
+<a name="how-to-contribute" class="anchor" href="#how-to-contribute"><span class="octicon octicon-link"></span></a>How to contribute</h2>
+
+<ol>
+<li>File an issue in the repository, using the bug tracker, describing the
+contribution you'd like to make. This will help us to get you started on the
+right foot.</li>
+<li>Fork the project in your account and create a new branch:
+<code>your-great-feature</code>.</li>
+<li>Commit your changes in that branch.</li>
+<li>Open a pull request, and reference the initial issue in the pull request
+message.</li>
+</ol>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>See the <a href="./LICENSE">LICENSE</a> file.</p>
+        </section>
+
+        <footer>
+          jQuery Sidebar is maintained by <a href="https://github.com/jillix">jillix</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
