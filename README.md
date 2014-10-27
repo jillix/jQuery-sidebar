@@ -38,15 +38,13 @@ $(".my-sidebar").on("sidebar:closed", function () {
 });
 ```
 
-### Params 
-- **Object** `options`: An object that will be merged with the default options. 
+### Params
+- **Object** `options`: An object that will be merged with the default options.
  - `speed`: animation speed (default: 200)
  - `side`: left|right|top|bottom (default: "left")
 
 ### Return
 - **jQuery** The jQuery elements that were selected.
-
-
 
 ## How to contribute
 
