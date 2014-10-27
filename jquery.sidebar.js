@@ -1,7 +1,7 @@
 /*!
  *  jQuery sidebar plugin
  *  ---------------------
- *  A stupid simple sidebar jQuery plugin
+ *  A stupid simple sidebar jQuery plugin.
  *
  *  Developed with <3 and JavaScript by jillix developers.
  *  Copyright (c) 2013-14 jillix
