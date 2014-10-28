@@ -1,5 +1,5 @@
 {
-  "name": "jQuery-sidebar",
+  "name": "jquery-sidebar",
   "version": "2.0.0",
   "description": "A stupid simple sidebar jQuery plugin.",
   "main": "src/jquery.sidebar.js",
