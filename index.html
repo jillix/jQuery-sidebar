@@ -88,7 +88,7 @@
                     var sides = ["left", "top", "right", "bottom"];
                     for (var i = 0; i < sides.length; ++i) {
                         (function (cSide) {
-                            $(".sidebar-" + cSide).sidebar({side: cSide});
+                            $(".sidebar." + cSide).sidebar({side: cSide, closed: false});
                             $(".toggle-sidebar-" + cSide).on("click", function () {
                                 $(".sidebar." + cSide).trigger("sidebar:toggle");
                                 return false;
