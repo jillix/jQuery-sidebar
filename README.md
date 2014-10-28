@@ -42,11 +42,12 @@ Initialize sidebar on selected elements.
 $(".my-sidebar").sidebar({...});
 ```
 
-After the call above, you can programatically open/close the sidebar using:
+After the call above, you can programatically open/close/toggle the sidebar using:
 
 ```js
 $(".my-sidebar").trigger("sidebar:open");
 $(".my-sidebar").trigger("sidebar:close");
+$(".my-sidebar").trigger("sidebar:toggle");
 ```
 
 After the sidebar is opened/closed, `sidebar:opened`/`sidebar:closed` event is emitted.
@@ -68,6 +69,7 @@ $(".my-sidebar").on("sidebar:closed", function () {
 
 ### Return
 - **jQuery** The jQuery elements that were selected.
+
 
 ## How to contribute
 
