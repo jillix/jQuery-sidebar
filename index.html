@@ -74,11 +74,28 @@
                 </div>
 
                 <h2><a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
-                <section id="example-buttons" class="clearfix">
-                    <a href="#" class="button toggle-sidebar-left"><span>Toggle Left</span></a>
-                    <a href="#" class="button toggle-sidebar-top"><span>Toggle Top</span></a>
-                    <a href="#" class="button toggle-sidebar-right"><span>Toggle Right</span></a>
-                    <a href="#" class="button toggle-sidebar-bottom"><span>Toggle Bottom</span></a>
+                <h3>Toggle sidebars</h3>
+                <section class="example-buttons" class="clearfix">
+                    <a href="#" class="button sidebar" data-action="toggle" data-side="left"><span>Toggle Left</span></a>
+                    <a href="#" class="button sidebar" data-action="toggle" data-side="top"><span>Toggle Top</span></a>
+                    <a href="#" class="button sidebar" data-action="toggle" data-side="right"><span>Toggle Right</span></a>
+                    <a href="#" class="button sidebar" data-action="toggle" data-side="bottom"><span>Toggle Bottom</span></a>
+                </section>
+
+                <h3>Open sidebars</h3>
+                <section class="example-buttons" class="clearfix">
+                    <a href="#" class="button sidebar" data-action="open" data-side="left"><span>Open Left</span></a>
+                    <a href="#" class="button sidebar" data-action="open" data-side="top"><span>Open Top</span></a>
+                    <a href="#" class="button sidebar" data-action="open" data-side="right"><span>Open Right</span></a>
+                    <a href="#" class="button sidebar" data-action="open" data-side="bottom"><span>Open Bottom</span></a>
+                </section>
+
+                <h3>Close sidebars</h3>
+                <section class="example-buttons" class="clearfix">
+                    <a href="#" class="button sidebar" data-action="close" data-side="left"><span>Close Left</span></a>
+                    <a href="#" class="button sidebar" data-action="close" data-side="top"><span>Close Top</span></a>
+                    <a href="#" class="button sidebar" data-action="close" data-side="right"><span>Close Right</span></a>
+                    <a href="#" class="button sidebar" data-action="close" data-side="bottom"><span>Close Bottom</span></a>
                 </section>
 
                 <div class="sidebar left">Hello World</div>
@@ -87,83 +104,29 @@
                 <div class="sidebar bottom">I am on bottom!</div>
 
                 <script>
+
+                    // All sides
                     var sides = ["left", "top", "right", "bottom"];
+
+                    // Initialize sidebars
                     for (var i = 0; i < sides.length; ++i) {
-                        (function (cSide) {
-                            $(".sidebar." + cSide).sidebar({side: cSide, closed: false}).hide().trigger("sidebar:close").on("sidebar:closed", function () {
-                                $(this).show();
-                            });
-                            $(".toggle-sidebar-" + cSide).on("click", function () {
-                                $(".sidebar." + cSide).trigger("sidebar:toggle");
-                                return false;
-                            });
-                        })(sides[i]);
+                        var cSide = sides[i];
+                        $(".sidebar." + cSide).sidebar({side: cSide}).hide().trigger("sidebar:close").on("sidebar:closed", function () {
+                            $(this).show();
+                        });
                     }
+
+                    // Click handlers
+                    $(".button.sidebar").on("click", function () {
+                        var $this = $(this);
+                        var action = $this.attr("data-action");
+                        var side = $this.attr("data-side");
+                        $(".sidebar." + side).trigger("sidebar:" + action);
+                        return false;
+                    });
                 </script>
 
-
-                <h2>
-<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
-
-                <h2>
-<a name="sidebaroptions" class="anchor" href="#sidebaroptions"><span class="octicon octicon-link"></span></a><code>sidebar(options)</code>
-</h2>
-
-                <p>Initialize sidebar on selected elements.</p>
-
-                <div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">".my-sidebar"</span><span class="p">).</span><span class="nx">sidebar</span><span class="p">({...});</span>
-</pre>
-                </div>
-
-                <p>After the call above, you can programatically open/close the sidebar
-                    using:</p>
-
-                <div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">".my-sidebar"</span><span class="p">).</span><span class="nx">trigger</span><span class="p">(</span><span class="s2">"sidebar:open"</span><span class="p">);</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">".my-sidebar"</span><span class="p">).</span><span class="nx">trigger</span><span class="p">(</span><span class="s2">"sidebar:close"</span><span class="p">);</span>
-</pre>
-                </div>
-
-                <p>After the sidebar is opened/closed, <code>sidebar:opened</code>/<code>sidebar:closed</code> event
-                    is emitted.</p>
-
-                <div class="highlight highlight-js"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">".my-sidebar"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"sidebar:opened"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-   <span class="c1">// Do something on open</span>
-<span class="p">});</span>
-
-<span class="nx">$</span><span class="p">(</span><span class="s2">".my-sidebar"</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"sidebar:closed"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-   <span class="c1">// Do something on close</span>
-<span class="p">});</span>
-</pre>
-                </div>
-
-                <h3>
-<a name="params" class="anchor" href="#params"><span class="octicon octicon-link"></span></a>Params</h3>
-
-                <ul>
-                    <li>
-                        <strong>Object</strong>  <code>options</code>: An object
-                        that will be merged with the default options.
-
-                        <ul>
-                            <li>
-                                <code>speed</code>: animation speed (default: 200)</li>
-                            <li>
-                                <code>side</code>: left|right|top|bottom (default:
-                                "left")</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h3>
-<a name="return" class="anchor" href="#return"><span class="octicon octicon-link"></span></a>Return</h3>
-
-                <ul>
-                    <li>
-                        <strong>jQuery</strong> The jQuery elements that were selected.</li>
-                </ul>
-
-                <h2>
-<a name="how-to-contribute" class="anchor" href="#how-to-contribute"><span class="octicon octicon-link"></span></a>How to contribute</h2>
+                <h2> <a name="how-to-contribute" class="anchor" href="#how-to-contribute"><span class="octicon octicon-link"></span></a>How to contribute</h2>
 
                 <ol>
                     <li>File an issue in the repository, using the bug tracker, describing
@@ -178,9 +141,6 @@
                 </ol>
 
                 <h2>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
-
-                <p>See the <a href="./LICENSE">LICENSE</a> file.</p>
             </section>
 
             <footer>
