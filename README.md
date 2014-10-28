@@ -1,13 +1,33 @@
 # jQuery-sidebar
 A stupid simple sidebar jQuery plugin.
 
-## Installation
-Run the following commands to download and install the application:
+## Usage
 
-```sh
-$ git clone https://github.com/jillix/jQuery-sidebar.git jQuery-sidebar
-$ cd jQuery-sidebar
-$ npm install
+Include the script file into your HTML page:
+
+```html
+...
+<script src="path/to/jQuery-sidebar.min.js"></script>
+...
+<div class="sidebar left">Hello World</div>
+<div class="sidebar right">I am on right!</div>
+<div class="sidebar top">I am on top!</div>
+<div class="sidebar bottom">I am on bottom!</div>
+...
+<script>
+    // Sidebar on left (default)
+    $(".sidebar.left").sidebar().trigger("sidebar:open");
+
+    // Sidebar on right side
+    $(".sidebar.right").sidebar({side: "right"});
+
+    // Sidebar on top side
+    $(".sidebar.top").sidebar({side: "top"});
+
+    // Sidebar on bottom side
+    $(".sidebar.bottom").sidebar({side: "bottom"});
+</script>
+...
 ```
 
 ## Documentation
