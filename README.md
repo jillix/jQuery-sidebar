@@ -7,7 +7,10 @@ Include the script file into your HTML page:
 
 ```html
 ...
-<script src="path/to/jQuery-sidebar.min.js"></script>
+<!-- Include jQuery -->
+<script src="path/to/jquery.min.js"></script>
+<!-- Include jQuery Sidebar -->
+<script src="path/to/jquery.sidebar.min.js"></script>
 ...
 <div class="sidebar left">Hello World</div>
 <div class="sidebar right">I am on right!</div>
