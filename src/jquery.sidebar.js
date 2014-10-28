@@ -16,11 +16,12 @@
      * $(".my-sidebar").sidebar({...});
      * ```
      *
-     * After the call above, you can programatically open/close the sidebar using:
+     * After the call above, you can programatically open/close/toggle the sidebar using:
      *
      * ```js
      * $(".my-sidebar").trigger("sidebar:open");
      * $(".my-sidebar").trigger("sidebar:close");
+     * $(".my-sidebar").trigger("sidebar:toggle");
      * ```
      *
      * After the sidebar is opened/closed, `sidebar:opened`/`sidebar:closed` event is emitted.
@@ -68,6 +69,9 @@
                 bottom: [-height, 0]
             }
 
+            // Is closed
+            closed: true
+
         }, options);
 
         // Override range
@@ -96,6 +100,19 @@
             self.animate(properties, settings.speed, function() {
                 self.trigger("sidebar:opened");
             });
+        });
+
+        /*!
+         *  Toggles the sidebar
+         *  $("[jQuery selector]).trigger("sidebar:toggle");
+         * */
+        this.on("sidebar:toggle", function(callback) {
+            if (settings.closed) {
+                self.trigger("sidebar:open");
+            } else {
+                self.trigger("sidebar:close");
+            }
+            settings.closed = !settings.closed;
         });
 
         return this;
