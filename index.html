@@ -21,8 +21,10 @@
         <div class="inner">
 
             <header>
-                <h1>jQuery Sidebar</h1>
-                <h2>A stupid simple sidebar jQuery plugin.</h2>
+                <center>
+                    <h1>jQuery Sidebar</h1>
+                    <h2>A stupid simple sidebar jQuery plugin.</h2>
+                </center>
             </header>
 
             <section id="downloads" class="clearfix">
@@ -88,7 +90,9 @@
                     var sides = ["left", "top", "right", "bottom"];
                     for (var i = 0; i < sides.length; ++i) {
                         (function (cSide) {
-                            $(".sidebar." + cSide).sidebar({side: cSide, closed: false});
+                            $(".sidebar." + cSide).sidebar({side: cSide, closed: false}).hide().trigger("sidebar:close").on("sidebar:closed", function () {
+                                $(this).show();
+                            });
                             $(".toggle-sidebar-" + cSide).on("click", function () {
                                 $(".sidebar." + cSide).trigger("sidebar:toggle");
                                 return false;
