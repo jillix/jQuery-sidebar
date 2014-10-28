@@ -71,6 +71,9 @@ $(".my-sidebar").on("sidebar:closed", function () {
 - **jQuery** The jQuery elements that were selected.
 
 
+## Changelog
+To see the versions and the changes between them go to [releases page](https://github.com/jillix/jQuery-sidebar/releases).
+
 ## How to contribute
 
 1. File an issue in the repository, using the bug tracker, describing the
