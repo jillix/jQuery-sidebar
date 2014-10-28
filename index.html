@@ -90,7 +90,7 @@
                         (function (cSide) {
                             $(".sidebar-" + cSide).sidebar({side: cSide});
                             $(".toggle-sidebar-" + cSide).on("click", function () {
-                                $(".sidebar-" + cSide).trigger("sidebar:toggle");
+                                $(".sidebar." + cSide).trigger("sidebar:toggle");
                                 return false;
                             });
                         })(sides[i]);

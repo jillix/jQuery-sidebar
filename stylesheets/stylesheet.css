@@ -377,3 +377,59 @@ footer a:hover {
 #example-buttons a {
     margin-bottom: 10px;
 }
+
+.sidebar.left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 270px;
+    background: rgb(68, 68, 68);
+    color: white;
+    padding: 30px;
+    box-shadow: 0 0 5px black;
+    font-size: 31px;
+    text-align: center;
+}
+
+.sidebar.right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 270px;
+    background: rgb(68, 68, 68);
+    color: white;
+    padding: 30px;
+    box-shadow: 0 0 5px black;
+    font-size: 31px;
+    text-align: center;
+}
+
+.sidebar.bottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 270px;
+    background: rgb(68, 68, 68);
+    color: white;
+    padding: 30px;
+    box-shadow: 0 0 5px black;
+    font-size: 31px;
+    text-align: center;
+}
+
+.sidebar.top {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 270px;
+    background: rgb(68, 68, 68);
+    color: white;
+    padding: 30px;
+    box-shadow: 0 0 5px black;
+    font-size: 31px;
+    text-align: center;
+}
