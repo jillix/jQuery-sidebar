@@ -1,4 +1,4 @@
-# jQuery-sidebar
+# jQuery Sidebar
 A stupid simple sidebar jQuery plugin.
 
 ## Usage
