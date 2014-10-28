@@ -98,7 +98,7 @@
             var properties = {};
             properties[settings.side] = settings.range[0];
             self.animate(properties, settings.speed, function() {
-                self.trigger("sidebar:opened");
+                self.trigger("sidebar:closed");
             });
         });
 
