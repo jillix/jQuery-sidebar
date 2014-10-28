@@ -37,13 +37,32 @@
 <p>A stupid simple sidebar jQuery plugin.</p>
 
 <h2>
-<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>Run the following commands to download and install the application:</p>
+<p>Include the script file into your HTML page:</p>
 
-<div class="highlight highlight-sh"><pre><span class="nv">$ </span>git clone https://github.com/jillix/jQuery-sidebar.git jQuery-sidebar
-<span class="nv">$ </span><span class="nb">cd </span>jQuery-sidebar
-<span class="nv">$ </span>npm install
+<div class="highlight highlight-html"><pre>...
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"path/to/jQuery-sidebar.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+...
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sidebar left"</span><span class="nt">&gt;</span>Hello World<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sidebar right"</span><span class="nt">&gt;</span>I am on right!<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sidebar top"</span><span class="nt">&gt;</span>I am on top!<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sidebar bottom"</span><span class="nt">&gt;</span>I am on bottom!<span class="nt">&lt;/div&gt;</span>
+...
+<span class="nt">&lt;script&gt;</span>
+    <span class="c1">// Sidebar on left (default)</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">".sidebar.left"</span><span class="p">).</span><span class="nx">sidebar</span><span class="p">().</span><span class="nx">trigger</span><span class="p">(</span><span class="s2">"sidebar:open"</span><span class="p">);</span>
+
+    <span class="c1">// Sidebar on right side</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">".sidebar.right"</span><span class="p">).</span><span class="nx">sidebar</span><span class="p">({</span><span class="nx">side</span><span class="o">:</span> <span class="s2">"right"</span><span class="p">});</span>
+
+    <span class="c1">// Sidebar on top side</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">".sidebar.top"</span><span class="p">).</span><span class="nx">sidebar</span><span class="p">({</span><span class="nx">side</span><span class="o">:</span> <span class="s2">"top"</span><span class="p">});</span>
+
+    <span class="c1">// Sidebar on bottom side</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">".sidebar.bottom"</span><span class="p">).</span><span class="nx">sidebar</span><span class="p">({</span><span class="nx">side</span><span class="o">:</span> <span class="s2">"bottom"</span><span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+...
 </pre></div>
 
 <h2>
