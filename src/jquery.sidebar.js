@@ -67,7 +67,7 @@
                 right: [-width, 0],
                 top: [-height, 0],
                 bottom: [-height, 0]
-            }
+            },
 
             // Is closed
             closed: true
