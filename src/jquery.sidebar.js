@@ -84,7 +84,9 @@
         this.on("sidebar:open", function() {
             var properties = {};
             properties[settings.side] = settings.range[1];
-            self.animate(properties, settings.speed, function() {
+            settings.closed = null;
+            self.stop().animate(properties, settings.speed, function() {
+                settings.closed = false;
                 self.trigger("sidebar:opened");
             });
         });
@@ -97,7 +99,9 @@
         this.on("sidebar:close", function(callback) {
             var properties = {};
             properties[settings.side] = settings.range[0];
-            self.animate(properties, settings.speed, function() {
+            settings.closed = null;
+            self.stop().animate(properties, settings.speed, function() {
+                settings.closed = true;
                 self.trigger("sidebar:closed");
             });
         });
@@ -112,7 +116,6 @@
             } else {
                 self.trigger("sidebar:close");
             }
-            settings.closed = !settings.closed;
         });
 
         return this;
