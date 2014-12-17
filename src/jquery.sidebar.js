@@ -47,6 +47,11 @@
     $.fn.sidebar = function(options) {
 
         var self = this;
+        if (self.length > 1) {
+            return self.each(function () {
+                $(this).sidebar(options);
+            });
+        }
 
         // Width, height
         var width = self.outerWidth();
