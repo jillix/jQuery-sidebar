@@ -1,6 +1,8 @@
 # jQuery Sidebar
 A stupid simple sidebar jQuery plugin.
 
+[![](http://i.imgur.com/L32Y3zw.png)](http://jillix.github.io/jQuery-sidebar/)
+
 ## Usage
 
 Include the script file into your HTML page:
