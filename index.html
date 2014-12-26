@@ -1,51 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>jQuery Sidebar</title>
+        <!-- Mobile support -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-    <script src="javascripts/jquery.js"></script>
-    <script src="javascripts/jquery.sidebar.min.js"></script>
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>jQuery Sidebar by jillix</title>
-</head>
+        <!-- Twitter Bootstrap -->
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 
-<body>
-    <div id="container">
-        <div class="inner">
+        <!-- Material Design for Bootstrap -->
+        <link href="css/material-wfont.min.css" rel="stylesheet">
+        <link href="css/ripples.min.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
+        <link href="css/pygment_trac.css" rel="stylesheet">
 
-            <header>
-                <center>
-                    <h1>jQuery Sidebar <small class="version"></small></h1>
-                    <h2>A stupid simple sidebar jQuery plugin.</h2>
-                </center>
-            </header>
+        <!-- Font Awesome -->
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-            <section id="downloads" class="clearfix">
-                <a href="https://github.com/jillix/jQuery-sidebar/zipball/master" id="download-zip"
-                class="button"><span>Download .zip</span></a>
-                <a href="https://github.com/jillix/jQuery-sidebar/tarball/master" id="download-tar-gz"
-                class="button"><span>Download .tar.gz</span></a>
-                <a href="https://github.com/jillix/jQuery-sidebar" id="view-on-github" class="button"><span>View on GitHub</span></a>
-            </section>
-
-            <hr>
-
-            <section id="main_content">
-                <h1>
-<a name="jquery-sidebar" class="anchor" href="#jquery-sidebar"><span class="octicon octicon-link"></span></a>jQuery-sidebar</h1>
-
+        <!-- jQuery -->
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="js/jquery.sidebar.min.js"></script>
+        <script src="js/handlers.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="container text-left">
+                <h1 class="title">jQuery Sidebar <span class="version"></span></h1>
                 <p>A stupid simple sidebar jQuery plugin.</p>
-
-                <h2>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
-
+                <a class="btn btn-info" href="https://github.com/jillix/jQuery-sidebar/zipball/master">
+                    <i class="fa fa-cloud-download"></i> Download .zip
+                </a>
+                <a class="btn btn-info" href="https://github.com/jillix/jQuery-sidebar/tarball/master">
+                    <i class="fa fa-file-archive-o"></i> Download .tar.gz
+                </a>
+                <a class="btn btn-info" href="https://github.com/jillix/jQuery-sidebar/">
+                    <i class="fa fa-github"></i> View on GitHub
+                </a>
+            </div>
+        </header>
+        <article>
+            <div class="container">
+                <h2>Usage</h2>
                 <p>Include the script file into your HTML page:</p>
 
                 <div class="highlight highlight-html"><pre>...
@@ -71,86 +67,49 @@
 <span class="nt">&lt;/script&gt;</span>
 ...
 </pre>
-                </div>
+                    </div>
+                    <p>Check out the <a href="https://github.com/jillix/jQuery-sidebar#documentation">documentation on the GitHub page</a>.</p>
 
-                <h2><a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
-                <h3>Toggle sidebars</h3>
-                <section class="example-buttons" class="clearfix">
-                    <a href="#" class="button sidebar" data-action="toggle" data-side="left"><span>Toggle Left</span></a>
-                    <a href="#" class="button sidebar" data-action="toggle" data-side="top"><span>Toggle Top</span></a>
-                    <a href="#" class="button sidebar" data-action="toggle" data-side="right"><span>Toggle Right</span></a>
-                    <a href="#" class="button sidebar" data-action="toggle" data-side="bottom"><span>Toggle Bottom</span></a>
-                </section>
+                    <section class="demo">
 
-                <h3>Open sidebars</h3>
-                <section class="example-buttons" class="clearfix">
-                    <a href="#" class="button sidebar" data-action="open" data-side="left"><span>Open Left</span></a>
-                    <a href="#" class="button sidebar" data-action="open" data-side="top"><span>Open Top</span></a>
-                    <a href="#" class="button sidebar" data-action="open" data-side="right"><span>Open Right</span></a>
-                    <a href="#" class="button sidebar" data-action="open" data-side="bottom"><span>Open Bottom</span></a>
-                </section>
+                        <h2>Demo</h2>
+                        <h3>Toggle sidebars</h3>
+                        <div>
+                            <a href="#" class="btn btn-primary" data-action="toggle" data-side="left"><span>Toggle Left</span></a>
+                            <a href="#" class="btn btn-primary" data-action="toggle" data-side="top"><span>Toggle Top</span></a>
+                            <a href="#" class="btn btn-primary" data-action="toggle" data-side="right"><span>Toggle Right</span></a>
+                            <a href="#" class="btn btn-primary" data-action="toggle" data-side="bottom"><span>Toggle Bottom</span></a>
+                        </div>
 
-                <h3>Close sidebars</h3>
-                <section class="example-buttons" class="clearfix">
-                    <a href="#" class="button sidebar" data-action="close" data-side="left"><span>Close Left</span></a>
-                    <a href="#" class="button sidebar" data-action="close" data-side="top"><span>Close Top</span></a>
-                    <a href="#" class="button sidebar" data-action="close" data-side="right"><span>Close Right</span></a>
-                    <a href="#" class="button sidebar" data-action="close" data-side="bottom"><span>Close Bottom</span></a>
-                </section>
+                        <h3>Open sidebars</h3>
+                        <section class="example-buttons" class="clearfix">
+                            <a href="#" class="btn btn-success" data-action="open" data-side="left"><span>Open Left</span></a>
+                            <a href="#" class="btn btn-success" data-action="open" data-side="top"><span>Open Top</span></a>
+                            <a href="#" class="btn btn-success" data-action="open" data-side="right"><span>Open Right</span></a>
+                            <a href="#" class="btn btn-success" data-action="open" data-side="bottom"><span>Open Bottom</span></a>
+                        </section>
 
-                <div class="sidebar left">Hello World</div>
-                <div class="sidebar right">I am on right!</div>
-                <div class="sidebar top">I am on top!</div>
-                <div class="sidebar bottom">I am on bottom!</div>
+                        <h3>Close sidebars</h3>
+                        <section class="example-buttons" class="clearfix">
+                            <a href="#" class="btn btn-danger" data-action="close" data-side="left"><span>Close Left</span></a>
+                            <a href="#" class="btn btn-danger" data-action="close" data-side="top"><span>Close Top</span></a>
+                            <a href="#" class="btn btn-danger" data-action="close" data-side="right"><span>Close Right</span></a>
+                            <a href="#" class="btn btn-danger" data-action="close" data-side="bottom"><span>Close Bottom</span></a>
+                        </section>
+                    </section>
+            </div>
+        </article>
+        <footer>
+            <div class="container">
+                <i class="fa fa-code"></i> with <i class="fa fa-heart"></i> and JavaScript by the <strong><a href="http://github.com/jillix">@jillix</a></strong> developers.
+            </div>
+        </footer>
 
-                <script>
-
-                    // All sides
-                    var sides = ["left", "top", "right", "bottom"];
-                    $("h1 small.version").text($.fn.sidebar.version);
-
-                    // Initialize sidebars
-                    for (var i = 0; i < sides.length; ++i) {
-                        var cSide = sides[i];
-                        $(".sidebar." + cSide).sidebar({side: cSide});
-                    }
-
-                    // Click handlers
-                    $(".button.sidebar").on("click", function () {
-                        var $this = $(this);
-                        var action = $this.attr("data-action");
-                        var side = $this.attr("data-side");
-                        $(".sidebar." + side).trigger("sidebar:" + action);
-                        return false;
-                    });
-                </script>
-
-                <h2> <a name="how-to-contribute" class="anchor" href="#how-to-contribute"><span class="octicon octicon-link"></span></a>How to contribute</h2>
-
-                <ol>
-                    <li>File an issue in the repository, using the bug tracker, describing
-                        the contribution you'd like to make. This will help us
-                        to get you started on the right foot.</li>
-                    <li>Fork the project in your account and create a new branch:
-                        <code>your-great-feature</code>.</li>
-                    <li>Commit your changes in that branch.</li>
-                    <li>Open a pull request, and reference the initial issue in the
-                        pull request message.
-                    </li>
-                </ol>
-
-                <h2>
-            </section>
-
-            <footer>
-                jQuery Sidebar is maintained by <a href="https://github.com/jillix">jillix</a>
-                <br>This page was generated by <a href="http://pages.github.com">GitHub Pages</a>.
-                Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-            </footer>
-
-
+        <div class="sidebars">
+            <div class="sidebar left">Left</div>
+            <div class="sidebar right">Right</div>
+            <div class="sidebar top">Top</div>
+            <div class="sidebar bottom">Bottom</div>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>
