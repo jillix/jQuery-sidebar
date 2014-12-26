@@ -42,7 +42,8 @@
      *
      *  - `speed` (Number): animation speed (default: `200`)
      *  - `side` (String): left|right|top|bottom (default: `"left"`)
-     *  - `closed` (Boolean): A boolean value indicating if the sidebar is closed or not (default: `true`).
+     *  - `isClosed` (Boolean): A boolean value indicating if the sidebar is closed or not (default: `false`).
+     *  - `close` (Boolean): If `true`, the sidebar will be closed by default.
      *  - `range` (Object): An object containing:
      *    - `left` (Array): An array with the min and max left values (default: `[-width, 0]`).
      *    - `right` (Array): An array with the min and max right values (default: `[-width, 0]`).
@@ -82,7 +83,10 @@
             },
 
             // Is closed
-            closed: true
+            isClosed: false
+
+            // Should I close the sidebar?
+            close: true
 
         }, options);
 
@@ -93,12 +97,12 @@
          *  Opens the sidebar
          *  $([jQuery selector]).trigger("sidebar:open");
          * */
-        this.on("sidebar:open", function() {
+        self.on("sidebar:open", function() {
             var properties = {};
             properties[settings.side] = settings.range[1];
-            settings.closed = null;
+            settings.isClosed = null;
             self.stop().animate(properties, settings.speed, function() {
-                settings.closed = false;
+                settings.isClosed = false;
                 self.trigger("sidebar:opened");
             });
         });
@@ -108,12 +112,12 @@
          *  Closes the sidebar
          *  $("[jQuery selector]).trigger("sidebar:close");
          * */
-        this.on("sidebar:close", function(callback) {
+        self.on("sidebar:close", function(callback) {
             var properties = {};
             properties[settings.side] = settings.range[0];
-            settings.closed = null;
+            settings.isClosed = null;
             self.stop().animate(properties, settings.speed, function() {
-                settings.closed = true;
+                settings.isClosed = true;
                 self.trigger("sidebar:closed");
             });
         });
@@ -122,15 +126,22 @@
          *  Toggles the sidebar
          *  $("[jQuery selector]).trigger("sidebar:toggle");
          * */
-        this.on("sidebar:toggle", function(callback) {
-            if (settings.closed) {
+        self.on("sidebar:toggle", function(callback) {
+            if (settings.isClosed) {
                 self.trigger("sidebar:open");
             } else {
                 self.trigger("sidebar:close");
             }
         });
 
-        return this;
+        // Close the sidebar
+        if (!settings.isClosed && settings.close) {
+            self.hide().trigger("sidebar:close").one("sidebar:closed", function() {
+                $(this).show();
+            });
+        }
+
+        return self;
     };
 
     // Version
