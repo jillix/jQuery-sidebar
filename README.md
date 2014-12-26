@@ -1,6 +1,8 @@
 # jQuery Sidebar
 A stupid simple sidebar jQuery plugin.
 
+[![](http://i.imgur.com/L32Y3zw.png)](http://jillix.github.io/jQuery-sidebar/)
+
 ## Usage
 
 Include the script file into your HTML page:
@@ -34,8 +36,7 @@ Include the script file into your HTML page:
 ```
 
 ## Documentation
-
-## `sidebar(options)`
+### `sidebar(options)`
 Initialize sidebar on selected elements.
 
 ```js
@@ -62,13 +63,21 @@ $(".my-sidebar").on("sidebar:closed", function () {
 });
 ```
 
-### Params
+#### Params
 - **Object** `options`: An object that will be merged with the default options.
- - `speed`: animation speed (default: 200)
- - `side`: left|right|top|bottom (default: "left")
+ - `speed` (Number): animation speed (default: `200`)
+ - `side` (String): left|right|top|bottom (default: `"left"`)
+ - `isClosed` (Boolean): A boolean value indicating if the sidebar is closed or not (default: `false`).
+ - `close` (Boolean): If `true`, the sidebar will be closed by default.
+ - `range` (Object): An object containing:
+   - `left` (Array): An array with the min and max left values (default: `[-width, 0]`).
+   - `right` (Array): An array with the min and max right values (default: `[-width, 0]`).
+   - `top` (Array): An array with the min and max top values (default: `[-height, 0]`).
+   - `bottom` (Array): An array with the min and max bottom values (default: `[-height, 0]`).
 
-### Return
+#### Return
 - **jQuery** The jQuery elements that were selected.
+
 
 
 ## Changelog
