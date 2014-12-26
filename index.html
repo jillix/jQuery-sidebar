@@ -22,7 +22,7 @@
 
             <header>
                 <center>
-                    <h1>jQuery Sidebar</h1>
+                    <h1>jQuery Sidebar <small class="version"></small></h1>
                     <h2>A stupid simple sidebar jQuery plugin.</h2>
                 </center>
             </header>
@@ -107,13 +107,12 @@
 
                     // All sides
                     var sides = ["left", "top", "right", "bottom"];
+                    $("h1 small.version").text($.fn.sidebar.version);
 
                     // Initialize sidebars
                     for (var i = 0; i < sides.length; ++i) {
                         var cSide = sides[i];
-                        $(".sidebar." + cSide).sidebar({side: cSide}).hide().trigger("sidebar:close").on("sidebar:closed", function () {
-                            $(this).show();
-                        });
+                        $(".sidebar." + cSide).sidebar({side: cSide});
                     }
 
                     // Click handlers

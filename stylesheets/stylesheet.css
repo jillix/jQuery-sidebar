@@ -433,3 +433,7 @@ footer a:hover {
     font-size: 31px;
     text-align: center;
 }
+
+h1 small.version {
+    color: rgb(145, 145, 145);
+}
