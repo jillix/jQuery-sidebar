@@ -40,8 +40,15 @@
      * @function
      * @param {Object} options An object that will be merged with the default options.
      *
-     *  - `speed`: animation speed (default: 200)
-     *  - `side`: left|right|top|bottom (default: "left")
+     *  - `speed` (Number): animation speed (default: `200`)
+     *  - `side` (String): left|right|top|bottom (default: `"left"`)
+     *  - `closed` (Boolean): A boolean value indicating if the sidebar is closed or not (default: `true`).
+     *  - `range` (Object): An object containing:
+     *    - `left` (Array): An array with the min and max left values (default: `[-width, 0]`).
+     *    - `right` (Array): An array with the min and max right values (default: `[-width, 0]`).
+     *    - `top` (Array): An array with the min and max top values (default: `[-height, 0]`).
+     *    - `bottom` (Array): An array with the min and max bottom values (default: `[-height, 0]`).
+     *
      * @return {jQuery} The jQuery elements that were selected.
      */
     $.fn.sidebar = function(options) {
@@ -125,4 +132,7 @@
 
         return this;
     };
+
+    // Version
+    $.fn.sidebar.version = "3.0.0";
 })(jQuery);
