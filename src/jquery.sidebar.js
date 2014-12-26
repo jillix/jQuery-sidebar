@@ -83,7 +83,7 @@
             },
 
             // Is closed
-            isClosed: false
+            isClosed: false,
 
             // Should I close the sidebar?
             close: true
