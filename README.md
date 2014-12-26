@@ -65,7 +65,8 @@ $(".my-sidebar").on("sidebar:closed", function () {
 - **Object** `options`: An object that will be merged with the default options.
  - `speed` (Number): animation speed (default: `200`)
  - `side` (String): left|right|top|bottom (default: `"left"`)
- - `closed` (Boolean): A boolean value indicating if the sidebar is closed or not (default: `true`).
+ - `isClosed` (Boolean): A boolean value indicating if the sidebar is closed or not (default: `false`).
+ - `close` (Boolean): If `true`, the sidebar will be closed by default.
  - `range` (Object): An object containing:
    - `left` (Array): An array with the min and max left values (default: `[-width, 0]`).
    - `right` (Array): An array with the min and max right values (default: `[-width, 0]`).
