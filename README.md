@@ -3,6 +3,13 @@ A stupid simple sidebar jQuery plugin.
 
 [![](http://i.imgur.com/L32Y3zw.png)](http://jillix.github.io/jQuery-sidebar/)
 
+## Available on CDN! :ship:
+*jQuery-Sidebar* is available on [CDNJS](https://cdnjs.com/libraries/jquery-sidebar) and you can use it like this:
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.0.0/jquery.sidebar.min.js"></script>
+```
+
 ## Usage
 
 Include the script file into your HTML page:
@@ -13,6 +20,10 @@ Include the script file into your HTML page:
 <script src="path/to/jquery.min.js"></script>
 <!-- Include jQuery Sidebar -->
 <script src="path/to/jquery.sidebar.min.js"></script>
+<!--
+ or from cdnjs:
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.0.0/jquery.sidebar.min.js"></script>
+-->
 ...
 <div class="sidebar left">Hello World</div>
 <div class="sidebar right">I am on right!</div>
