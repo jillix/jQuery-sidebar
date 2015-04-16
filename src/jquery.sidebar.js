@@ -112,12 +112,10 @@
          * */
         self.on("sidebar:close", function(callback) {
             var properties = {};
-            if (settings.side == "left" || settings.side == "right")
-            {
+            if (settings.side === "left" || settings.side === "right") {
                 var width = self.outerWidth();
                 properties[settings.side] = -width;
-            } else 
-            {
+            } else {
                 var height = self.outerHeight();
                 properties[settings.side] = -height;
             }
