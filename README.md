@@ -7,7 +7,7 @@ A stupid simple sidebar jQuery plugin.
 *jQuery-Sidebar* is available on [CDNJS](https://cdnjs.com/libraries/jquery-sidebar) and you can use it like this:
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.0.0/jquery.sidebar.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.1.0/jquery.sidebar.min.js"></script>
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ Include the script file into your HTML page:
 <script src="path/to/jquery.sidebar.min.js"></script>
 <!--
  or from cdnjs:
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.0.0/jquery.sidebar.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.1.0/jquery.sidebar.min.js"></script>
 -->
 ...
 <div class="sidebar left">Hello World</div>
@@ -80,22 +80,14 @@ $(".my-sidebar").on("sidebar:closed", function () {
  - `side` (String): left|right|top|bottom (default: `"left"`)
  - `isClosed` (Boolean): A boolean value indicating if the sidebar is closed or not (default: `false`).
  - `close` (Boolean): If `true`, the sidebar will be closed by default.
- - `range` (Object): An object containing:
-   - `left` (Array): An array with the min and max left values (default: `[-width, 0]`).
-   - `right` (Array): An array with the min and max right values (default: `[-width, 0]`).
-   - `top` (Array): An array with the min and max top values (default: `[-height, 0]`).
-   - `bottom` (Array): An array with the min and max bottom values (default: `[-height, 0]`).
 
 #### Return
 - **jQuery** The jQuery elements that were selected.
-
-
 
 ## Changelog
 To see the versions and the changes between them go to [releases page](https://github.com/jillix/jQuery-sidebar/releases).
 
 ## How to contribute
-
 1. File an issue in the repository, using the bug tracker, describing the
    contribution you'd like to make. This will help us to get you started on the
    right foot.

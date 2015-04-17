@@ -4,7 +4,7 @@
  *  A stupid simple sidebar jQuery plugin.
  *
  *  Developed with <3 and JavaScript by jillix developers.
- *  Copyright (c) 2013-14 jillix
+ *  Copyright (c) 2013-15 jillix
  * */
 (function($) {
 
@@ -44,11 +44,6 @@
      *  - `side` (String): left|right|top|bottom (default: `"left"`)
      *  - `isClosed` (Boolean): A boolean value indicating if the sidebar is closed or not (default: `false`).
      *  - `close` (Boolean): If `true`, the sidebar will be closed by default.
-     *  - `range` (Object): An object containing:
-     *    - `left` (Array): An array with the min and max left values (default: `[-width, 0]`).
-     *    - `right` (Array): An array with the min and max right values (default: `[-width, 0]`).
-     *    - `top` (Array): An array with the min and max top values (default: `[-height, 0]`).
-     *    - `bottom` (Array): An array with the min and max bottom values (default: `[-height, 0]`).
      *
      * @return {jQuery} The jQuery elements that were selected.
      */
@@ -74,14 +69,6 @@
             // Side: left|right|top|bottom
             side: "left",
 
-            // Range defaults
-            range: {
-                left: [-width, 0],
-                right: [-width, 0],
-                top: [-height, 0],
-                bottom: [-height, 0]
-            },
-
             // Is closed
             isClosed: false,
 
@@ -90,8 +77,6 @@
 
         }, options);
 
-        // Override range
-        settings.range = settings.range[settings.side];
 
         /*!
          *  Opens the sidebar
@@ -99,7 +84,7 @@
          * */
         self.on("sidebar:open", function() {
             var properties = {};
-            properties[settings.side] = settings.range[1];
+            properties[settings.side] = 0;
             settings.isClosed = null;
             self.stop().animate(properties, settings.speed, function() {
                 settings.isClosed = false;
@@ -114,7 +99,11 @@
          * */
         self.on("sidebar:close", function(callback) {
             var properties = {};
-            properties[settings.side] = settings.range[0];
+            if (settings.side === "left" || settings.side === "right") {
+                properties[settings.side] = -self.outerWidth();
+            } else {
+                properties[settings.side] = -self.outerHeight();
+            }
             settings.isClosed = null;
             self.stop().animate(properties, settings.speed, function() {
                 settings.isClosed = true;
@@ -145,5 +134,5 @@
     };
 
     // Version
-    $.fn.sidebar.version = "3.0.0";
+    $.fn.sidebar.version = "3.1.0";
 })(jQuery);
