@@ -133,5 +133,5 @@
     };
 
     // Version
-    $.fn.sidebar.version = "3.1.0";
+    $.fn.sidebar.version = "3.2.0";
 })(jQuery);
