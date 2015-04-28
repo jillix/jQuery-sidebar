@@ -77,7 +77,6 @@
 
         }, options);
 
-
         /*!
          *  Opens the sidebar
          *  $([jQuery selector]).trigger("sidebar:open");
@@ -86,7 +85,7 @@
             var properties = {};
             properties[settings.side] = 0;
             settings.isClosed = null;
-            self.stop().animate(properties, Object(data).speed || settings.speed, function() {
+            self.stop().animate(properties, $.extend({}, settings, data).speed, function() {
                 settings.isClosed = false;
                 self.trigger("sidebar:opened");
             });
@@ -105,7 +104,7 @@
                 properties[settings.side] = -self.outerHeight();
             }
             settings.isClosed = null;
-            self.stop().animate(properties, Object(data).speed || settings.speed, function() {
+            self.stop().animate(properties, $.extend({}, settings, data).speed, function() {
                 settings.isClosed = true;
                 self.trigger("sidebar:closed");
             });
@@ -125,11 +124,9 @@
 
         // Close the sidebar
         if (!settings.isClosed && settings.close) {
-            self.hide().trigger("sidebar:close", [{
+            self.trigger("sidebar:close", [{
                 speed: 0
-            }]).one("sidebar:closed", function() {
-                $(this).show();
-            });
+            }]);
         }
 
         return self;
