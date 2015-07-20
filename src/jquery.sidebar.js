@@ -3,7 +3,7 @@
  *  ---------------------
  *  A stupid simple sidebar jQuery plugin.
  *
- *  Developed with <3 and JavaScript by jillix developers.
+ *  Developed with <3 and JavaScript by the jillix developers.
  *  Copyright (c) 2013-15 jillix
  * */
 (function($) {
