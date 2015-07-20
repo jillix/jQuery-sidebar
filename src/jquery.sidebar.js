@@ -144,5 +144,5 @@
     };
 
     // Version
-    $.fn.sidebar.version = "3.2.0";
+    $.fn.sidebar.version = "3.3.0";
 })(jQuery);
