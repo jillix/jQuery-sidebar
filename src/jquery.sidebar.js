@@ -122,12 +122,23 @@
             }
         });
 
-        // Close the sidebar
-        if (!settings.isClosed && settings.close) {
+        function closeWithNoAnimation() {
             self.trigger("sidebar:close", [{
                 speed: 0
             }]);
         }
+
+        // Close the sidebar
+        if (!settings.isClosed && settings.close) {
+            closeWithNoAnimation();
+        }
+
+        $(window).on("resize", function () {
+            if (!settings.isClosed) { return; }
+            closeWithNoAnimation();
+        });
+
+        self.data("sidebar", settings);
 
         return self;
     };
