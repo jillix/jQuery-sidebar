@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/jillix/jQuery-sidebar/issues"
   },
-  "homepage": "https://github.com/jillix/jQuery-sidebar"
+  "homepage": "https://github.com/jillix/jQuery-sidebar",
+  "blah": {
+    "ex_img": "http://i.imgur.com/4BLylrK.jpg"
+  }
 }
