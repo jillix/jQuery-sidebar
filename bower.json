@@ -1,0 +1,32 @@
+{
+  "name": "jquery-sidebar",
+  "version": "3.3.1",
+  "homepage": "https://github.com/jillix/jQuery-sidebar",
+  "authors": [
+    "Ionică Bizău <bizauionica@gmail.com> (http://ionicabizau.net/)",
+    "teamrc (https://github.com/teamrc)",
+    "Silviu Bogan <silviubogan@gmail.com> (https://github.com/silviubogan)"
+  ],
+  "description": "A stupid simple sidebar jQuery plugin.",
+  "main": "src/jquery.sidebar.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "jquery",
+    "sidebar",
+    "simple"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jillix/jQuery-sidebar.git"
+  }
+}
