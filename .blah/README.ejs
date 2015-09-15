@@ -13,15 +13,41 @@
 <!-- * * * Thanks! * * *                                                    -->
 <!---------------------------------------------------------------------------->
 
-# jquery-sidebar
 
-A stupid simple sidebar jQuery plugin.
+<% // Dependencies %>
+<% var IsThere = require("is-there"); %>
+<% var Fs = require("fs"); %>
+<% var Path = require("path"); %>
+<% var Ul = require("ul"); %>
+
+<% // Compute the directory paths %>
+<% var binPath = Path.join(_.path, "bin"); %>
+<% var examplesPath = Path.join(_.path, "examples"); %>
+<% var examplePath = Path.join(_.path, "example"); %>
+<% var example = IsThere(examplePath) ? examplePath : IsThere(examplesPath) ? examplesPath : null; %>
+<% var isCli = IsThere(binPath); %>
+
+<% if (_.pack.blah.h_img) { %>
+![<%- _.pack.name %>](<%- _.pack.blah.h_img %>)
+<% } %>
+
+<% // Create the name and description %>
+<% if (isCli) { %>
+# `$ <%- _.pack.name %>`
+<% } else { %>
+# <%- _.pack.name %>
+<% } %>
+<%- _.pack.description %>
+
+<% if (_.pack.blah.ex_img) { %>
+[![<%- _.pack.name %>](<%-_.pack.blah.ex_img %>)](http://jillix.github.io/jQuery-sidebar)
+<% } %>
 
 ## Available on CDN! :ship:
 *jQuery-Sidebar* is available on [CDNJS](https://cdnjs.com/libraries/jquery-sidebar) and you can use it like this:
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.3.1/jquery.sidebar.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/<%- _.pack.version %>/jquery.sidebar.min.js"></script>
 ```
 
 ## Usage
@@ -39,7 +65,7 @@ Include the script file in your HTML page:
 <!-- Include jQuery Sidebar -->
 <script src="path/to/jquery.sidebar.min.js"></script>
 <!-- Or from CDNJS:
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.3.1/jquery.sidebar.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/<%- _.pack.version %>/jquery.sidebar.min.js"></script>
 -->
 ...
 <div class="sidebar left">Hello World</div>
@@ -63,55 +89,63 @@ Include the script file in your HTML page:
 ...
 ```
 
+<% // Cli usage %>
+<% if (isCli) { %>
+### CLI Usage
+You can install the package globally and use it as command line tool:
+
+```sh
+$ npm i -g <%- _.pack.name %>
+```
+
+Then, run `<%- _.pack.name %> --help` and see what the CLI tool can do.
+
+<% } %>
+
+<% // Show the example if there is one %>
+<% if (example) { %>
+<% var exStrPath = Path.join(example, "index.js"); %>
+<% if (!IsThere(exStrPath)) { %>
+<%   example = null; %>
+<% } %>
+<% if (example) { %>
+## Example
+
+<% if (isCli) { %>
+Here is an example how to use this package as library.
+<% } %>
+
+<% var exStr = Fs.readFileSync(exStrPath, "utf-8"); %>
+<% exStr = exStr.replace("../lib", _.pack.name) %>
+
+```js
+<%- exStr %>
+```
+<% } %>
+<% } %>
+
+<% // Documentation %>
 ## Documentation
 
-### `sidebar(options)`
-Initialize sidebar on selected elements.
-
-```js
-$(".my-sidebar").sidebar({...});
-```
-
-After the call above, you can programatically open/close/toggle the sidebar using:
-
-```js
-$(".my-sidebar").trigger("sidebar:open");
-$(".my-sidebar").trigger("sidebar:close");
-$(".my-sidebar").trigger("sidebar:toggle");
-$(".my-sidebar").trigger("sidebar:close", [{ speed: 0 }]);
-```
-
-After the sidebar is opened/closed, `sidebar:opened`/`sidebar:closed` event is emitted.
-
-```js
-$(".my-sidebar").on("sidebar:opened", function () {
-   // Do something on open
-});
-
-$(".my-sidebar").on("sidebar:closed", function () {
-   // Do something on close
-});
-```
-
-#### Params
-- **Object** `options`: An object that will be merged with the default options.
- - `speed` (Number): animation speed (default: `200`)
- - `side` (String): left|right|top|bottom (default: `"left"`)
- - `isClosed` (Boolean): A boolean value indicating if the sidebar is closed or not (default: `false`).
- - `close` (Boolean): If `true`, the sidebar will be closed by default.
-
-#### Return
-- **jQuery** The jQuery elements that were selected.
+<% if (isCli) { %>
+For full API reference, see the [DOCUMENTATION.md][docs] file.
+<% } else { %>
+<% docs = docs.split("\n").slice(3).join("\n"); %>
+<%- docs %>
+<% } %>
 
 ## Changelog
 To see the versions and the changes between them go to [releases page](https://github.com/jillix/jQuery-sidebar/releases).
 
+<% // How to contribute %>
 ## How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
+<% // License information %>
 ## License
 See the [LICENSE][license] file.
 
+<% // Links %>
 [license]: /LICENSE
 [contributing]: /CONTRIBUTING.md
 [docs]: /DOCUMENTATION.md
