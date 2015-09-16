@@ -23,7 +23,7 @@ A stupid simple sidebar jQuery plugin.
 *jQuery-Sidebar* is available on [CDNJS](https://cdnjs.com/libraries/jquery-sidebar) and you can use it like this:
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.3.1/jquery.sidebar.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.3.2/jquery.sidebar.min.js"></script>
 ```
 
 ## Usage
@@ -41,7 +41,7 @@ Include the script file in your HTML page:
 <!-- Include jQuery Sidebar -->
 <script src="path/to/jquery.sidebar.min.js"></script>
 <!-- Or from CDNJS:
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.3.1/jquery.sidebar.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sidebar/3.3.2/jquery.sidebar.min.js"></script>
 -->
 ...
 <div class="sidebar left">Hello World</div>
