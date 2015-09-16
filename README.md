@@ -17,6 +17,8 @@
 
 A stupid simple sidebar jQuery plugin.
 
+[![jquery-sidebar](http://i.imgur.com/4BLylrK.jpg)](http://jillix.github.io/jQuery-sidebar)
+
 ## Available on CDN! :ship:
 *jQuery-Sidebar* is available on [CDNJS](https://cdnjs.com/libraries/jquery-sidebar) and you can use it like this:
 
