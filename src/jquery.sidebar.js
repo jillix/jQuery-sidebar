@@ -22,6 +22,7 @@
      * $(".my-sidebar").trigger("sidebar:open");
      * $(".my-sidebar").trigger("sidebar:close");
      * $(".my-sidebar").trigger("sidebar:toggle");
+     * $(".my-sidebar").trigger("sidebar:close", [{ speed: 0 }]);
      * ```
      *
      * After the sidebar is opened/closed, `sidebar:opened`/`sidebar:closed` event is emitted.
@@ -144,5 +145,5 @@
     };
 
     // Version
-    $.fn.sidebar.version = "3.3.0";
+    $.fn.sidebar.version = "3.3.1";
 })(jQuery);
