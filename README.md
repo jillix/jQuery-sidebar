@@ -65,6 +65,8 @@ Include the script file in your HTML page:
 ...
 ```
 
+Also, please note that you must write your own CSS code for the sidebars. You can find a CSS code example [here](https://github.com/jillix/jQuery-sidebar/blob/gh-pages/css/custom.css).
+
 ## Documentation
 
 ### `sidebar(options)`
